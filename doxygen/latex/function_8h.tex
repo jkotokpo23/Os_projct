@@ -1,0 +1,187 @@
+\hypertarget{function_8h}{}\doxysection{function.\+h File Reference}
+\label{function_8h}\index{function.h@{function.h}}
+
+
+Définition des constantes, structures et prototypes de fonctions pour la gestion des fichiers dans une partition simulée.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfile}{file}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{function_8h_ad51ded0bbd705f02f73fc60c0b721ced}\label{function_8h_ad51ded0bbd705f02f73fc60c0b721ced}} 
+\#define {\bfseries BLOCK\+\_\+\+SIZE}~2048
+\begin{DoxyCompactList}\small\item\em Taille de bloc pour notre partition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{function_8h_a15549992c7eaa2cdebce24bcbad29a7e}\label{function_8h_a15549992c7eaa2cdebce24bcbad29a7e}} 
+\#define {\bfseries PARTITION\+\_\+\+SIZE}~(32 $\ast$ 1024 $\ast$ 1024)
+\begin{DoxyCompactList}\small\item\em Taille de la partition en octets (32 Mo). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{function_8h_a4b44d609f1fb15b35a4e9f6bb9d9e558}\label{function_8h_a4b44d609f1fb15b35a4e9f6bb9d9e558}} 
+\#define {\bfseries PARTITION\+\_\+\+NAME}~\char`\"{}my\+Partition.\+bin\char`\"{}
+\begin{DoxyCompactList}\small\item\em Nom de la partition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{function_8h_a2a0f365c6c1f202227d908ade2fed250}\label{function_8h_a2a0f365c6c1f202227d908ade2fed250}} 
+\#define {\bfseries name\+Size}~20
+\begin{DoxyCompactList}\small\item\em Taille maximale du nom de fichier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{function_8h_a1831756a0838d0a77ed52c795d9d9681}{my\+Format}} (char $\ast$partition\+Name)
+\begin{DoxyCompactList}\small\item\em Crée ou formate une partition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfile}{file}} $\ast$ \mbox{\hyperlink{function_8h_a5e9495aa166c5ded170e57d757c20ae6}{my\+Open}} (char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Ouvre un fichier sur la partition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{function_8h_a8f5b0f730f59d674be88dbb47bd56004}{visualisation}} (char $\ast$partition\+Name)
+\begin{DoxyCompactList}\small\item\em Affiche la quantité d\textquotesingle{}espace utilisé dans la partition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{function_8h_ab5086668eab8d8143f6eac77be0d0412}{my\+Seek}} (\mbox{\hyperlink{structfile}{file}} $\ast$f, int offset, int base)
+\begin{DoxyCompactList}\small\item\em Déplace le curseur de lecture/écriture dans le fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{function_8h_a6ec851b8448ad96e0a91150e4e3310b3}{my\+Read}} (\mbox{\hyperlink{structfile}{file}} $\ast$f, void $\ast$buffer, int n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Lit des données à partir du fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{function_8h_a4f504d143f79215f1ef10e903f2a0b5e}{my\+Write}} (\mbox{\hyperlink{structfile}{file}} $\ast$f, void $\ast$buffer, int n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Ecrit des données dans le fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{function_8h_adac78a4c1db4a044a55b72fb9bb318a2}{size}} (\mbox{\hyperlink{structfile}{file}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Calcule la taille d\textquotesingle{}un fichier en octets \+: la taille effective du fichier avec les métadonnées moins l\textquotesingle{}espace reservé sur le blocs pour les métadonnées. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Définition des constantes, structures et prototypes de fonctions pour la gestion des fichiers dans une partition simulée. 
+
+\begin{DoxyDate}{Date}
+2024-\/03-\/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{function_8h_a1831756a0838d0a77ed52c795d9d9681}\label{function_8h_a1831756a0838d0a77ed52c795d9d9681}} 
+\index{function.h@{function.h}!myFormat@{myFormat}}
+\index{myFormat@{myFormat}!function.h@{function.h}}
+\doxysubsubsection{\texorpdfstring{myFormat()}{myFormat()}}
+{\footnotesize\ttfamily int my\+Format (\begin{DoxyParamCaption}\item[{char $\ast$}]{partition\+Name }\end{DoxyParamCaption})}
+
+
+
+Crée ou formate une partition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em partition\+Name} & Le nom de la partition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si réussi, -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{function_8h_a5e9495aa166c5ded170e57d757c20ae6}\label{function_8h_a5e9495aa166c5ded170e57d757c20ae6}} 
+\index{function.h@{function.h}!myOpen@{myOpen}}
+\index{myOpen@{myOpen}!function.h@{function.h}}
+\doxysubsubsection{\texorpdfstring{myOpen()}{myOpen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfile}{file}} $\ast$ my\+Open (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Ouvre un fichier sur la partition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Le nom du fichier à ouvrir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la structure de fichier ou NULL en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{function_8h_a6ec851b8448ad96e0a91150e4e3310b3}\label{function_8h_a6ec851b8448ad96e0a91150e4e3310b3}} 
+\index{function.h@{function.h}!myRead@{myRead}}
+\index{myRead@{myRead}!function.h@{function.h}}
+\doxysubsubsection{\texorpdfstring{myRead()}{myRead()}}
+{\footnotesize\ttfamily int my\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} $\ast$}]{f,  }\item[{void $\ast$}]{buffer,  }\item[{int}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Lit des données à partir du fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+{\em buffer} & Le tampon où stocker les données lues. \\
+\hline
+{\em n\+Bytes} & Le nombre d\textquotesingle{}octets à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le nombre d\textquotesingle{}octets lus ou -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{function_8h_ab5086668eab8d8143f6eac77be0d0412}\label{function_8h_ab5086668eab8d8143f6eac77be0d0412}} 
+\index{function.h@{function.h}!mySeek@{mySeek}}
+\index{mySeek@{mySeek}!function.h@{function.h}}
+\doxysubsubsection{\texorpdfstring{mySeek()}{mySeek()}}
+{\footnotesize\ttfamily void my\+Seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} $\ast$}]{f,  }\item[{int}]{offset,  }\item[{int}]{base }\end{DoxyParamCaption})}
+
+
+
+Déplace le curseur de lecture/écriture dans le fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+{\em offset} & Le décalage à appliquer. \\
+\hline
+{\em base} & La base à partir de laquelle le décalage est calculé (SEEK\+\_\+\+SET, SEEK\+\_\+\+CUR ou SEEK\+\_\+\+END). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{function_8h_a4f504d143f79215f1ef10e903f2a0b5e}\label{function_8h_a4f504d143f79215f1ef10e903f2a0b5e}} 
+\index{function.h@{function.h}!myWrite@{myWrite}}
+\index{myWrite@{myWrite}!function.h@{function.h}}
+\doxysubsubsection{\texorpdfstring{myWrite()}{myWrite()}}
+{\footnotesize\ttfamily int my\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} $\ast$}]{f,  }\item[{void $\ast$}]{buffer,  }\item[{int}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Ecrit des données dans le fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+{\em buffer} & Le tampon contenant les données à écrire. \\
+\hline
+{\em n\+Bytes} & Le nombre d\textquotesingle{}octets à écrire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le nombre d\textquotesingle{}octets écrits ou -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{function_8h_adac78a4c1db4a044a55b72fb9bb318a2}\label{function_8h_adac78a4c1db4a044a55b72fb9bb318a2}} 
+\index{function.h@{function.h}!size@{size}}
+\index{size@{size}!function.h@{function.h}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Calcule la taille d\textquotesingle{}un fichier en octets \+: la taille effective du fichier avec les métadonnées moins l\textquotesingle{}espace reservé sur le blocs pour les métadonnées. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La taille du fichier. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{function_8h_a8f5b0f730f59d674be88dbb47bd56004}\label{function_8h_a8f5b0f730f59d674be88dbb47bd56004}} 
+\index{function.h@{function.h}!visualisation@{visualisation}}
+\index{visualisation@{visualisation}!function.h@{function.h}}
+\doxysubsubsection{\texorpdfstring{visualisation()}{visualisation()}}
+{\footnotesize\ttfamily void visualisation (\begin{DoxyParamCaption}\item[{char $\ast$}]{partition\+Name }\end{DoxyParamCaption})}
+
+
+
+Affiche la quantité d\textquotesingle{}espace utilisé dans la partition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em partition\+Name} & Le nom de la partition. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,43 @@
+\hypertarget{function_8h_source}{}\doxysection{function.\+h}
+\mbox{\hyperlink{function_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ FUNCTION\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ FUNCTION\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ BLOCK\_SIZE\ 2048}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ PARTITION\_SIZE\ (32\ *\ 1024\ *\ 1024)}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ PARTITION\_NAME\ "{}myPartition.bin"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ nameSize\ 20}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/*\ Structure\ de\ fichiers\ */}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{char}\ fileName[\mbox{\hyperlink{function_8h_a2a0f365c6c1f202227d908ade2fed250}{nameSize}}];\ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_a4bb94bb6f5e309a341838f20e334c926}{fileSize}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_a7447609266968b602c762cc345c55328}{startBlock}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_aba63651dd340e7cea3cbe5e667d01e66}{isOpen}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_a19ad1ae7097bdcdfa630216d77f3bfb1}{isUsed}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_af3b2b8ffe2b1effcf3983354beb28099}{cursor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \}\ \mbox{\hyperlink{structfile}{file}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ Prototypes\ des\ fonctions\ */}}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{function_8h_a1831756a0838d0a77ed52c795d9d9681}{myFormat}}(\textcolor{keywordtype}{char}*\ partitionName);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \mbox{\hyperlink{structfile}{file}}*\ \mbox{\hyperlink{function_8h_a5e9495aa166c5ded170e57d757c20ae6}{myOpen}}(\textcolor{keywordtype}{char}*\ fileName);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{function_8h_a8f5b0f730f59d674be88dbb47bd56004}{visualisation}}(\textcolor{keywordtype}{char}*\ partitionName);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{function_8h_ab5086668eab8d8143f6eac77be0d0412}{mySeek}}(\mbox{\hyperlink{structfile}{file}}*\ f,\ \textcolor{keywordtype}{int}\ offset,\ \textcolor{keywordtype}{int}\ base);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{function_8h_a6ec851b8448ad96e0a91150e4e3310b3}{myRead}}(\mbox{\hyperlink{structfile}{file}}*\ f,\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{int}\ nBytes);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{function_8h_a4f504d143f79215f1ef10e903f2a0b5e}{myWrite}}(\mbox{\hyperlink{structfile}{file}}*\ f,\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{int}\ nBytes);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{function_8h_adac78a4c1db4a044a55b72fb9bb318a2}{size}}(\mbox{\hyperlink{structfile}{file}}*\ f);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FUNCTION\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
